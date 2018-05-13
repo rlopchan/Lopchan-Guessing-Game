@@ -5,19 +5,31 @@ import random
 
 number = (random.randrange(100)+1)
 guess = int(input("Enter your guess: "))
+if (guess > 99):
+    print ("Out of range")
+    guess = int(input("Enter your guess: "))
 trials = (1)
 
 while (guess != number):
     if (guess > number):
         guess = int(input("Enter your guess lower: "))
+        if (guess > 99):
+            print ("Out of range")
+            guess = int(input("Enter your guess: "))
     if (guess < number):
         guess = int(input("Enter your guess higher: "))
+        if (guess > 99):
+            print ("Out of range")
+            guess = int(input("Enter your guess: "))
     trials += (1)
 
 print ("The actual number is", number)
 print ("You got it right in", trials, " trials!")
 
 guess1 = int(input("Enter your guess: "))
+if (guess1 > 99):
+    print ("Out of range")
+    guess = int(input("Enter your guess: "))
 number1 = (random.randrange(100)+1)
 trials1 = (1)
 
@@ -62,3 +74,4 @@ if (trials1 < trials):
        --         ---------    -------         ---------    -------    -----------   ----------
        """)
     
+input ("Enter the enter key to exit.")
